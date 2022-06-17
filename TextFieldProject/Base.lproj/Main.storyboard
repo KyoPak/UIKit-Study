@@ -36,6 +36,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OyC-Xy-07w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -51,6 +54,9 @@
                             <constraint firstItem="Mto-Ns-tCm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="ge0-WS-UOc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="iTH-P2-EGf" id="V3b-KI-IPI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
