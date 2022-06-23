@@ -9,15 +9,40 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let emailTextFieldview: UIView = { // 오토레이아웃 까지는 못잡아주고 초기셋팅만 가능.
+    // MARK: - 이메일 입력하는 텍스트 뷰
+    private lazy var emailTextFieldview: UIView = { // 오토레이아웃 까지는 못잡아주고 초기셋팅만 가능.
         let view = UIView()
         view.backgroundColor = UIColor.darkGray
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
+//        view.addSubview(emailTextField)
+//        view.addSubview(emailInfoLabel)
         return view
     }()
     
+    // "이메일 또는 전화번호" 안내문구
+    private lazy var emailInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "이메일주소 또는 전화번호"
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        return label
+    }()
     
+    
+    // 로그인 - 이메일 입력 필드
+    private lazy var emailTextField: UITextField = {
+       var tf = UITextField()
+        tf.frame.size.height = 48
+        tf.backgroundColor = .clear
+        tf.textColor = .white
+        tf.tintColor = .white
+        tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
+        tf.spellCheckingType = .no
+        tf.keyboardType = .emailAddress
+        return tf
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
