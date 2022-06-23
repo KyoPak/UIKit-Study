@@ -9,7 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let emailTextFieldview = UIView() // 메모리에 올라갔을 뿐
+    let emailTextFieldview: UIView = { // 오토레이아웃 까지는 못잡아주고 초기셋팅만 가능.
+        let view = UIView()
+        view.backgroundColor = UIColor.darkGray
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        return view
+    }()
     
     
     
@@ -20,7 +26,6 @@ class ViewController: UIViewController {
     }
 
     func makeUI() {
-        emailTextFieldview.backgroundColor = UIColor.darkGray
         
         view.addSubview(emailTextFieldview) // 기존 view에 올려놔야 화면에 표시된다.
         
