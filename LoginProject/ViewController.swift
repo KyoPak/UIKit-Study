@@ -124,6 +124,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .clear
         button.setTitle("비밀번호 재설정", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -182,10 +183,26 @@ class ViewController: UIViewController {
             passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
             passwordResetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             passwordResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight)            
+            passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight)
         ])
         
         
     }
+    
+    @objc func resetButtonTapped() {
+        let alert = UIAlertController(title: "비밀번호 변경", message: "비밀번호 변경하시겠습니까?", preferredStyle: .actionSheet)
+        let success = UIAlertAction(title: "확인", style: .default) { action in
+            print("확인버튼 눌림")
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { cancel in
+            print("취소버튼 눌림")
+        }
+        
+        alert.addAction(success)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
