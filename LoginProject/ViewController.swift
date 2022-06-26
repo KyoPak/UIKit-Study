@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(textFieldEditChanged), for: .editingChanged)
         return tf
     }()
     
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true
         tf.clearsOnBeginEditing = false
-        //tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(textFieldEditChanged), for: .editingChanged)
         return tf
     }()
     
@@ -104,7 +105,7 @@ class ViewController: UIViewController {
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.isEnabled = false
-        //button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -203,6 +204,11 @@ class ViewController: UIViewController {
     }
     
     
+    @objc func loginButtonTapped() {
+        print("로그인 버튼 눌렸습니다.")
+    }
+    
+
     @objc func resetButtonTapped() {
         let alert = UIAlertController(title: "비밀번호 변경", message: "비밀번호 변경하시겠습니까?", preferredStyle: .alert)
         let success = UIAlertAction(title: "확인", style: .default) { action in
@@ -216,6 +222,11 @@ class ViewController: UIViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    // 다른 공간 Tapped시 키보드 비활성화
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     
@@ -270,5 +281,24 @@ extension ViewController: UITextFieldDelegate {
         UIView.animate(withDuration: 0.3) {
             self.stackView.layoutIfNeeded()
         }
+    }
+    
+    @objc func textFieldEditChanged(textField :UITextField) {
+        // 체킹하는 코드
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty else {
+            loginButton.backgroundColor = .clear
+            loginButton.isEnabled = false
+            return
+        }
+        loginButton.backgroundColor = .red
+        loginButton.isEnabled = true
     }
 }
