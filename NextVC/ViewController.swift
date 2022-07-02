@@ -46,10 +46,21 @@ class ViewController: UIViewController {
             guard let thirdVC = segue.destination as? ThirdViewController else {
                 return
             }
-            thirdVC.someString = "스토리보드에서 세그웨이 사용하여 화면이동"
+            thirdVC.someString = "세그웨이 간접 이동"
+        }
+        
+        // 4) 버튼과 직접 연결하여 세그웨이 이동 (직접이동)
+        if segue.identifier == "toFourthVC" {
+            guard let fourthVC = segue.destination as? FourthViewController else {
+                return
+            }
+            fourthVC.someString = "세그웨이 직접 이동"
         }
     }
     
-    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // 4) 실행 여부를 조건문을 통하여 실행 할 수 있다 .
+        return true
+    }
 }
 
