@@ -32,5 +32,24 @@ class ViewController: UIViewController {
         secondVC.modalPresentationStyle = .fullScreen
         present(secondVC, animated: true, completion: nil)
     }
+    
+    // 3) 스토리보드에서의 화면 이동(간접 세그웨이)
+    @IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "toThirdVC", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toThirdVC" {
+            guard let thirdVC = segue.destination as? ThirdViewController else {
+                return
+            }
+            thirdVC.someString = "스토리보드에서 세그웨이 사용하여 화면이동"
+        }
+    }
+    
+    
 }
 

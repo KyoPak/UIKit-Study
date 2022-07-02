@@ -49,6 +49,9 @@
                                         <state key="normal" title="StoryBoard with Segue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="storyboardWithSegueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qea-xi-IZY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-GQ-vKj">
                                         <rect key="frame" x="0.0" y="345" width="340" height="55"/>
@@ -72,6 +75,9 @@
                             <constraint firstItem="VqQ-hV-Bq9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Emt-FD-DfG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Bjb-03-cD4" kind="presentation" identifier="toThirdVC" id="58J-Jf-EJu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +129,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BkR-Oc-zc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="8"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="0vj-Hj-Xeu">
+            <objects>
+                <viewController id="Bjb-03-cD4" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ioT-Pe-hG3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st4-B3-wNx">
+                                <rect key="frame" x="172" y="772" width="70" height="40"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="GUD-H7-fb8"/>
+                                    <constraint firstAttribute="height" constant="40" id="nkE-X4-a6t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="zbw-Qt-ZbK" eventType="touchUpInside" id="EmY-8w-phx"/>
+                                    <action selector="backButtonTapped:" destination="Bjb-03-cD4" eventType="touchUpInside" id="Fg1-J5-Uvk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThirdViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-hF-alG">
+                                <rect key="frame" x="112.5" y="407.5" width="189" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p2M-UW-IY2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Ra-hF-alG" firstAttribute="centerX" secondItem="ioT-Pe-hG3" secondAttribute="centerX" id="6mJ-PN-5TS"/>
+                            <constraint firstItem="2Ra-hF-alG" firstAttribute="centerY" secondItem="ioT-Pe-hG3" secondAttribute="centerY" id="81o-sN-euO"/>
+                            <constraint firstItem="st4-B3-wNx" firstAttribute="centerX" secondItem="ioT-Pe-hG3" secondAttribute="centerX" id="NpZ-GL-3Pq"/>
+                            <constraint firstItem="p2M-UW-IY2" firstAttribute="bottom" secondItem="st4-B3-wNx" secondAttribute="bottom" constant="30" id="mff-xO-rPy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4ce-eV-121"/>
+                    <connections>
+                        <outlet property="mainLabel" destination="2Ra-hF-alG" id="9b8-hs-62a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-4u-SYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="676.33928571428567"/>
         </scene>
     </scenes>
     <resources>
