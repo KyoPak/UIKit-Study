@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         mainLabel.text = "키와 몸무게를 입력하세요"
         
-        calculateButton.layer.cornerRadius = 10
+        calculateButton.layer.cornerRadius = 5
         calculateButton.clipsToBounds = true
         calculateButton.setTitle("BMI 계산하기", for: .normal)
         

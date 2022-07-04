@@ -84,6 +84,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnq-Ad-wv5"/>
+                                    <segue destination="fM3-he-Cet" kind="presentation" modalPresentationStyle="fullScreen" id="Hh4-Pa-BBS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="GnE-ui-ahe">
             <objects>
-                <viewController id="fM3-he-Cet" sceneMemberID="viewController">
+                <viewController id="fM3-he-Cet" customClass="SecondViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceE-V1-zmt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +158,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="fM3-he-Cet" eventType="touchUpInside" id="s9f-tG-yjc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ffg-xC-D1a"/>
@@ -169,6 +173,11 @@
                             <constraint firstItem="gXf-NC-ZrK" firstAttribute="centerX" secondItem="ceE-V1-zmt" secondAttribute="centerX" id="yg0-d7-Y6W"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="c94-NP-aLH" id="V8l-dQ-mIS"/>
+                        <outlet property="backButton" destination="Vkq-xH-n0N" id="5c7-P4-KOS"/>
+                        <outlet property="bmiNumberLabel" destination="uPi-Cu-xws" id="whu-nd-wIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jag-Ps-i5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
