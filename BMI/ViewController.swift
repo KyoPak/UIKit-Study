@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
-    
     @IBOutlet weak var calculateButton: UIButton!
+    
+    var bmi: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         // BMI결과값 도출 부분
-        
+        guard let height = heightTextField.text, let weight = weightTextField.text else { return }
+        bmi = calculateBMI(height: height, weight: weight)
     }
     
     
@@ -57,15 +59,24 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecondVC" {
             if let secondVC = segue.destination as? SecondViewController {
-               // 계산된 결과값 Segue로 전달
+               
+                // 계산된 결과값 Segue로 전달
+                secondVC.bmi = self.bmi
                 
             } else {return}
         }
         // 다음화면으로 가기전에 텍스트필드 비우기
         heightTextField.text = ""
         weightTextField.text = ""
-        
-        
+    }
+    
+    // BMI계산 메서드
+    func calculateBMI(height: String, weight: String) -> Double {
+        guard let h = Double(height), let w = Double(weight) else { return 0.0}
+        var bmi = w / (h * h) * 10000
+        bmi = round(bmi * 10) / 10 // 반올림
+        print("bmi 결과값: \(bmi)")
+        return bmi
     }
     
 }
