@@ -84,7 +84,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnq-Ad-wv5"/>
-                                    <segue destination="fM3-he-Cet" kind="presentation" modalPresentationStyle="fullScreen" id="Hh4-Pa-BBS"/>
+                                    <segue destination="fM3-he-Cet" kind="presentation" identifier="toSecondVC" modalPresentationStyle="fullScreen" id="Hh4-Pa-BBS"/>
                                 </connections>
                             </button>
                         </subviews>

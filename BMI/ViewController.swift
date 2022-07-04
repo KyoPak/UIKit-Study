@@ -37,7 +37,37 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
+        // BMI결과값 도출 부분
+        
     }
+    
+    
+    // 숫자입력 제대로 되어야만 화면이동 되게끔 조건
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if heightTextField.text == "" || weightTextField.text == "" {
+            mainLabel.text = "키와 몸무게를 입력해야합니다!!"
+            mainLabel.textColor = UIColor.red
+            return false
+        }
+        mainLabel.text = "키와 몸무게를 입력하세요"
+        mainLabel.textColor = .black
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSecondVC" {
+            if let secondVC = segue.destination as? SecondViewController {
+               // 계산된 결과값 Segue로 전달
+                
+            } else {return}
+        }
+        // 다음화면으로 가기전에 텍스트필드 비우기
+        heightTextField.text = ""
+        weightTextField.text = ""
+        
+        
+    }
+    
 }
 
 
