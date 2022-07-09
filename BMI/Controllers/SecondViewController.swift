@@ -21,11 +21,12 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         guard let bmi = bmi else { return }
         bmiNumberLabel.text = "\(bmi.value)"
         adviceLabel.text = bmi.advice
         bmiNumberLabel.backgroundColor = bmi.matchColor
-        configureUI()
+        
     }
     
     func configureUI() {
