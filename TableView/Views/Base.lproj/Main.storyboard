@@ -85,7 +85,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="pe1-lF-D0T" id="G3S-Ko-j0k"/>
-                        <segue destination="2ha-Jl-euh" kind="presentation" id="G7v-7a-tec"/>
+                        <segue destination="2ha-Jl-euh" kind="presentation" identifier="toDetail" id="G7v-7a-tec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

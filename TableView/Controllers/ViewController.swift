@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         // 셀의 높이 설정
         tableView.rowHeight = 120 //스토리보드에서 테이블뷰에서 설정도 가능
         movieDataManager.makeMovieData()
@@ -45,5 +46,23 @@ extension ViewController: UITableViewDataSource {
         cell.descriptionLabel.text = movie.movieDescription
         //cell.selectionStyle = .none
         return cell
+    }
+}
+
+// 터치 및 디스크롤등 디테일한 행동이 테이블위에서 일어나지만 VC로 전달을 받고, 구체적인 일처리도 VC위에서 해야한다 .
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            guard let detailVC = segue.destination as? DetailViewController else { return }
+            let array = movieDataManager.getMovieData()
+            
+            let indexPath = sender as! IndexPath
+            detailVC.movieData = array[indexPath.row]
+        }
     }
 }
