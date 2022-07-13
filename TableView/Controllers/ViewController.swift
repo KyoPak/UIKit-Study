@@ -16,14 +16,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        movieDataManager.makeMovieData()
+    }
+    
+    func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         // 셀의 높이 설정
+        title = "영화목록"
         tableView.rowHeight = 120 //스토리보드에서 테이블뷰에서 설정도 가능
-        movieDataManager.makeMovieData()
     }
-
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        
+        movieDataManager.updateMovieData()
+        
+        tableView.reloadData() // 데이터 바뀌었으니 테이블뷰 다시 불러오는 메서드
+    }
+    
 }
+
 
 extension ViewController: UITableViewDataSource {
     
@@ -44,7 +57,7 @@ extension ViewController: UITableViewDataSource {
         cell.mainImageView.image = movie.movieImage
         cell.movieNameLabel.text = movie.movieName
         cell.descriptionLabel.text = movie.movieDescription
-        //cell.selectionStyle = .none
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -52,17 +65,23 @@ extension ViewController: UITableViewDataSource {
 // 터치 및 디스크롤등 디테일한 행동이 테이블위에서 일어나지만 VC로 전달을 받고, 구체적인 일처리도 VC위에서 해야한다 .
 extension ViewController: UITableViewDelegate {
     
+    // 셀이 선택이 되었을떄 어떤 동작을 할 것인지 뷰컨트롤에게 물어봄.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 세그웨이를 실행
         performSegue(withIdentifier: "toDetail", sender: indexPath)
     }
     
+    // prepare 세그웨이 (데이터 전달)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             guard let detailVC = segue.destination as? DetailViewController else { return }
             let array = movieDataManager.getMovieData()
             
             let indexPath = sender as! IndexPath
+             
+            // 배열에서 아이템을 꺼내서, 다음화면으로 전달
             detailVC.movieData = array[indexPath.row]
         }
     }
 }
+ 
