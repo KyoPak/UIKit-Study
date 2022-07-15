@@ -53,7 +53,7 @@ extension ViewController: UITableViewDataSource {
         //indexPath.row : 그 그룹의 행이라고 생각
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = movieDataManager.getMovieData()[indexPath.row]
-        
+         
         cell.mainImageView.image = movie.movieImage
         cell.movieNameLabel.text = movie.movieName
         cell.descriptionLabel.text = movie.movieDescription
