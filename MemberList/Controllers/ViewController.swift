@@ -13,13 +13,44 @@ final class ViewController: UIViewController {
     //테이블뷰
     private let tableView  = UITableView()
     
+    var memberListManager = MemberListManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        
+        view.backgroundColor = .white
+        setupData()
+        setupTableView()
+        setupNavi()
         setupTableViewConstraints()
     }
+
+    func setupNavi() {
+        title = "회원 목록"
+        
+        // 네비게이션바 설정관련
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .systemBlue
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        // 네비게이션 오른쪽 상단 버튼 설정
+        //self.navigationItem.rightBarButtonItem = self.plusButton
+    }
+    
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.rowHeight = 60
+    }
+    
+    
+    func setupData() {
+        memberListManager.makeMebersListDatas()
+    }
+    
 
     //테이블뷰 오토레이아웃 설정
     func setupTableViewConstraints(){
@@ -38,7 +69,7 @@ final class ViewController: UIViewController {
 
 extension ViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return memberListManager.getMemberList().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
