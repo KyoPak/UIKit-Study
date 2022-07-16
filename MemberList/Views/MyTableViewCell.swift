@@ -9,6 +9,17 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
 
+    
+    var member: Member? {
+        didSet {
+            guard var member = member else {return}
+            mainImageView.image = member.memberImage
+            memberNameLabel.text = member.name
+            addressLabel.text = member.address
+        }
+    }
+    
+    
     // MARK: - 테이블 뷰 셀 UI 구현
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -70,6 +81,7 @@ class MyTableViewCell: UITableViewCell {
         super.updateConstraints()
     }
     
+    // 이미지뷰 동그랗게 ..
     override func layoutSubviews() {
         super.layoutSubviews()
         self.mainImageView.clipsToBounds = true

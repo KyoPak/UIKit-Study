@@ -16,6 +16,8 @@
 		3C57D0CF28825A6300522D59 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57D0CE28825A6300522D59 /* Member.swift */; };
 		3C57D0D1288262C200522D59 /* MemberListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57D0D0288262C200522D59 /* MemberListManager.swift */; };
 		3C57D0D328826C4A00522D59 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57D0D228826C4A00522D59 /* MyTableViewCell.swift */; };
+		3C57D0D52882900600522D59 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57D0D42882900600522D59 /* DetailViewController.swift */; };
+		3C57D0D72882902C00522D59 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57D0D62882902C00522D59 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3C57D0CE28825A6300522D59 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		3C57D0D0288262C200522D59 /* MemberListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListManager.swift; sourceTree = "<group>"; };
 		3C57D0D228826C4A00522D59 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		3C57D0D42882900600522D59 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3C57D0D62882902C00522D59 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				3C57D0BB28824B5800522D59 /* ViewController.swift */,
+				3C57D0D42882900600522D59 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			children = (
 				3C57D0BD28824B5800522D59 /* Main.storyboard */,
 				3C57D0D228826C4A00522D59 /* MyTableViewCell.swift */,
+				3C57D0D62882902C00522D59 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,11 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C57D0D1288262C200522D59 /* MemberListManager.swift in Sources */,
+				3C57D0D72882902C00522D59 /* DetailView.swift in Sources */,
 				3C57D0BC28824B5800522D59 /* ViewController.swift in Sources */,
 				3C57D0B828824B5800522D59 /* AppDelegate.swift in Sources */,
 				3C57D0BA28824B5800522D59 /* SceneDelegate.swift in Sources */,
 				3C57D0CF28825A6300522D59 /* Member.swift in Sources */,
 				3C57D0D328826C4A00522D59 /* MyTableViewCell.swift in Sources */,
+				3C57D0D52882900600522D59 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

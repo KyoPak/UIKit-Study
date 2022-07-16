@@ -43,7 +43,11 @@ final class ViewController: UIViewController {
     
     func setupTableView() {
         tableView.dataSource = self
+        
         tableView.rowHeight = 60
+        
+        // cell 등록
+        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MemberCell")
     }
     
     
@@ -73,7 +77,13 @@ extension ViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as! MyTableViewCell
+        
+        cell.member = memberListManager[indexPath.row]
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }
 
