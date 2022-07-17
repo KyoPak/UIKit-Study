@@ -8,12 +8,18 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
     
     //테이블뷰
     private let tableView  = UITableView()
     
     var memberListManager = MemberListManager()
+    
+    
+    lazy var plusButton: UIBarButtonItem = {
+        let button =
+        UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+        return button
+    }()
     
     
     override func viewDidLoad() {
@@ -24,6 +30,14 @@ final class ViewController: UIViewController {
         setupNavi()
         setupTableViewConstraints()
     }
+    
+    // 테이블 뷰 리로드 
+    override func viewWillAppear(_ animated: Bool) {
+        // super 호출 필요.
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
 
     func setupNavi() {
         title = "회원 목록"
@@ -38,7 +52,7 @@ final class ViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         // 네비게이션 오른쪽 상단 버튼 설정
-        //self.navigationItem.rightBarButtonItem = self.plusButton
+        self.navigationItem.rightBarButtonItem = self.plusButton
     }
     
     func setupTableView() {
@@ -69,6 +83,14 @@ final class ViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
     }
+    
+    
+    @objc func plusButtonTapped(){
+        let detailVC = DetailViewController()
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
 }
 
 

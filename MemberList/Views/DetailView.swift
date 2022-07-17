@@ -40,11 +40,6 @@ class DetailView: UIView {
         }
     }
     
-    
-    
-    
-    
-    
     //MARK: - UI구현
     
     let mainImageView: UIImageView = {
