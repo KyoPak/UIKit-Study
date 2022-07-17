@@ -242,6 +242,7 @@ class DetailView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         setupStackView()
+        memberIdTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -289,6 +290,15 @@ class DetailView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
-    
+}
 
+extension DetailView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // 멤버 ID는 수정 하지 못하도록 설정 (텍스트 필드 입력 안되도록 설정)
+        if textField == memberIdTextField {
+            return false
+        }
+        return true
+    }
 }
