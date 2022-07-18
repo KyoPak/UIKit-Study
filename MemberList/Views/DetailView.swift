@@ -242,6 +242,7 @@ class DetailView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         setupStackView()
+        setupNotification()
         memberIdTextField.delegate = self
     }
     
@@ -253,6 +254,14 @@ class DetailView: UIView {
     func setupStackView(){
         self.addSubview(stackView)
     }
+    
+    
+    func setupNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(moveUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moveDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
     
     // 오토레이아웃 업데이트
     override func updateConstraints() {
@@ -290,6 +299,30 @@ class DetailView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
+    
+    @objc func moveUpAction(){
+        stackViewTopConstraint.constant = -20
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    @objc func moveDownAction(){
+        stackViewTopConstraint.constant = 10
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
 }
 
 extension DetailView: UITextFieldDelegate {
