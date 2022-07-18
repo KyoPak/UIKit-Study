@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol MemberDelegate: AnyObject { // 클래스만 참조 가능하게 
+    func addNewMember(_ member: Member)
+    func update(index: Int, _ member: Member)
+}
+
+
 struct Member {
     
     // 멤버의 (절대적) 순서를 위한 타입 저장 속성

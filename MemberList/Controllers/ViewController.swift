@@ -31,12 +31,12 @@ final class ViewController: UIViewController {
         setupTableViewConstraints()
     }
     
-    // 테이블 뷰 리로드 
-    override func viewWillAppear(_ animated: Bool) {
-        // super 호출 필요.
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
+    // 테이블 뷰 리로드 - Delegate패턴 사용해서 리로드 필요 없어짐.
+//    override func viewWillAppear(_ animated: Bool) {
+//        // super 호출 필요.
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
     
 
     func setupNavi() {
@@ -115,6 +115,8 @@ extension ViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 다음화면으로 넘어가는 코드
         let detailVC = DetailViewController()
+        detailVC.delegate = self
+        
         navigationController?.pushViewController(detailVC, animated: true)
         
         let array = memberListManager.getMemberList()
@@ -122,4 +124,17 @@ extension ViewController:UITableViewDelegate {
         
     }
    
+}
+
+
+extension ViewController:MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
 }
