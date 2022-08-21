@@ -16,6 +16,10 @@
 		3C8E6DB628B257730020CDA5 /* SettingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DB528B257730020CDA5 /* SettingAppTests.swift */; };
 		3C8E6DC028B257730020CDA5 /* SettingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DBF28B257730020CDA5 /* SettingAppUITests.swift */; };
 		3C8E6DC228B257730020CDA5 /* SettingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DC128B257730020CDA5 /* SettingAppUITestsLaunchTests.swift */; };
+		3C8E6DD028B278430020CDA5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */; };
+		3C8E6DD128B278430020CDA5 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */; };
+		3C8E6DD428B283D80020CDA5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DD228B283D80020CDA5 /* MenuCell.swift */; };
+		3C8E6DD528B283D80020CDA5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E6DD328B283D80020CDA5 /* MenuCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		3C8E6DBB28B257730020CDA5 /* SettingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8E6DBF28B257730020CDA5 /* SettingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppUITests.swift; sourceTree = "<group>"; };
 		3C8E6DC128B257730020CDA5 /* SettingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		3C8E6DD228B283D80020CDA5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		3C8E6DD328B283D80020CDA5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				3C8E6DA728B257730020CDA5 /* Assets.xcassets */,
 				3C8E6DA928B257730020CDA5 /* LaunchScreen.storyboard */,
 				3C8E6DAC28B257730020CDA5 /* Info.plist */,
+				3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */,
+				3C8E6DD228B283D80020CDA5 /* MenuCell.swift */,
+				3C8E6DD328B283D80020CDA5 /* MenuCell.xib */,
+				3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */,
 			);
 			path = SettingApp;
 			sourceTree = "<group>";
@@ -232,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8E6DAB28B257730020CDA5 /* LaunchScreen.storyboard in Resources */,
+				3C8E6DD128B278430020CDA5 /* ProfileCell.xib in Resources */,
+				3C8E6DD528B283D80020CDA5 /* MenuCell.xib in Resources */,
 				3C8E6DA828B257730020CDA5 /* Assets.xcassets in Resources */,
 				3C8E6DA628B2576F0020CDA5 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8E6DA328B2576F0020CDA5 /* ViewController.swift in Sources */,
+				3C8E6DD428B283D80020CDA5 /* MenuCell.swift in Sources */,
+				3C8E6DD028B278430020CDA5 /* ProfileCell.swift in Sources */,
 				3C8E6D9F28B2576F0020CDA5 /* AppDelegate.swift in Sources */,
 				3C8E6DA128B2576F0020CDA5 /* SceneDelegate.swift in Sources */,
 			);
