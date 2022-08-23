@@ -10,8 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     var settingModel = [[SettingModel]]()
-    
-    
     @IBOutlet weak var settingTableView: UITableView!
     
     func makeData() {
@@ -25,9 +23,7 @@ class ViewController: UIViewController {
         SettingModel(leftImageName: "hand.raised.fill", menuTitle: "개인 정보 보호", subTitle: nil, rightImageView: "chevron.right"),
         SettingModel(leftImageName: "battery.100", menuTitle: "배터리", subTitle: nil, rightImageView: "chevron.right")]
         )
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +32,15 @@ class ViewController: UIViewController {
         settingTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
         settingTableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "ProfileCell")
         settingTableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
+        
+        setNavi()
         makeData()
+    }
+    
+    func setNavi() {
+        title = "설정"
+        self.view.backgroundColor = UIColor(white: 245/255, alpha: 1)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
