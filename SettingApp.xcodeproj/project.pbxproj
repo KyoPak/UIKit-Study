@@ -27,6 +27,8 @@
 		3C8E6DD128B278430020CDA5 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */; };
 		3C8E6DD428B283D80020CDA5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DD228B283D80020CDA5 /* MenuCell.swift */; };
 		3C8E6DD528B283D80020CDA5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E6DD328B283D80020CDA5 /* MenuCell.xib */; };
+		3CE02FF828B66C5F00CEABD3 /* SettingModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE02FF728B66C5F00CEABD3 /* SettingModelManager.swift */; };
+		3CE02FFA28B66F2A00CEABD3 /* GeneralModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE02FF928B66F2A00CEABD3 /* GeneralModelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		3C8E6DD228B283D80020CDA5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		3C8E6DD328B283D80020CDA5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		3CE02FF728B66C5F00CEABD3 /* SettingModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelManager.swift; sourceTree = "<group>"; };
+		3CE02FF928B66F2A00CEABD3 /* GeneralModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,22 +127,11 @@
 			children = (
 				3C8E6D9E28B2576F0020CDA5 /* AppDelegate.swift */,
 				3C8E6DA028B2576F0020CDA5 /* SceneDelegate.swift */,
-				3C8E6DA228B2576F0020CDA5 /* ViewController.swift */,
-				3C47C4FF28B3353F00D07FA4 /* SettingModel.swift */,
-				3C8E6DA428B2576F0020CDA5 /* Main.storyboard */,
-				3C57CBB828B503A200216E4C /* GeneralViewController.swift */,
-				3C57CBBA28B503C900216E4C /* GeneralViewController.storyboard */,
+				3CE02FF428B642AE00CEABD3 /* Models */,
+				3CE02FF528B642B600CEABD3 /* Views */,
+				3CE02FF628B642BE00CEABD3 /* Controllers */,
 				3C8E6DA728B257730020CDA5 /* Assets.xcassets */,
-				3C8C988928B50D3600D44DE5 /* GeneralCell.swift */,
-				3C8E6DA928B257730020CDA5 /* LaunchScreen.storyboard */,
 				3C8E6DAC28B257730020CDA5 /* Info.plist */,
-				3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */,
-				3C8E6DD228B283D80020CDA5 /* MenuCell.swift */,
-				3C8C988B28B50F2100D44DE5 /* GeneralModel.swift */,
-				3C8C988D28B5C41A00D44DE5 /* MyIDViewController.swift */,
-				3C8C988E28B5C41A00D44DE5 /* MyIDViewController.xib */,
-				3C8E6DD328B283D80020CDA5 /* MenuCell.xib */,
-				3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */,
 			);
 			path = SettingApp;
 			sourceTree = "<group>";
@@ -158,6 +151,43 @@
 				3C8E6DC128B257730020CDA5 /* SettingAppUITestsLaunchTests.swift */,
 			);
 			path = SettingAppUITests;
+			sourceTree = "<group>";
+		};
+		3CE02FF428B642AE00CEABD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C8C988B28B50F2100D44DE5 /* GeneralModel.swift */,
+				3C47C4FF28B3353F00D07FA4 /* SettingModel.swift */,
+				3CE02FF928B66F2A00CEABD3 /* GeneralModelManager.swift */,
+				3CE02FF728B66C5F00CEABD3 /* SettingModelManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3CE02FF528B642B600CEABD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C8E6DA928B257730020CDA5 /* LaunchScreen.storyboard */,
+				3C8E6DA428B2576F0020CDA5 /* Main.storyboard */,
+				3C57CBBA28B503C900216E4C /* GeneralViewController.storyboard */,
+				3C8C988E28B5C41A00D44DE5 /* MyIDViewController.xib */,
+				3C8E6DD328B283D80020CDA5 /* MenuCell.xib */,
+				3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */,
+				3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */,
+				3C8E6DD228B283D80020CDA5 /* MenuCell.swift */,
+				3C8C988928B50D3600D44DE5 /* GeneralCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CE02FF628B642BE00CEABD3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C8C988D28B5C41A00D44DE5 /* MyIDViewController.swift */,
+				3C8E6DA228B2576F0020CDA5 /* ViewController.swift */,
+				3C57CBB828B503A200216E4C /* GeneralViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8E6DA328B2576F0020CDA5 /* ViewController.swift in Sources */,
+				3CE02FF828B66C5F00CEABD3 /* SettingModelManager.swift in Sources */,
 				3C57CBB928B503A200216E4C /* GeneralViewController.swift in Sources */,
 				3C8C988A28B50D3600D44DE5 /* GeneralCell.swift in Sources */,
 				3C8C988C28B50F2100D44DE5 /* GeneralModel.swift in Sources */,
@@ -304,6 +335,7 @@
 				3C8E6DD028B278430020CDA5 /* ProfileCell.swift in Sources */,
 				3C8C988F28B5C41A00D44DE5 /* MyIDViewController.swift in Sources */,
 				3C8E6D9F28B2576F0020CDA5 /* AppDelegate.swift in Sources */,
+				3CE02FFA28B66F2A00CEABD3 /* GeneralModelManager.swift in Sources */,
 				3C8E6DA128B2576F0020CDA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

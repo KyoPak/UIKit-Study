@@ -8,22 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var settingModel = [[SettingModel]]()
-    @IBOutlet weak var settingTableView: UITableView!
     
-    func makeData() {
-        settingModel.append(
-        [SettingModel(leftImageName: "person.circle", menuTitle: "iPhone에 로그인하세요.", subTitle: "아이클라우드를 설정하세요.", rightImageView: "chevron.right")]
-        )
-        
-        settingModel.append(
-        [SettingModel(leftImageName: "gear", menuTitle: "일반", subTitle: nil, rightImageView: "chevron.right"),
-        SettingModel(leftImageName: "faceid", menuTitle: "Face ID 및 암호", subTitle: nil, rightImageView: "chevron.right"),
-        SettingModel(leftImageName: "hand.raised.fill", menuTitle: "개인 정보 보호", subTitle: nil, rightImageView: "chevron.right"),
-        SettingModel(leftImageName: "battery.100", menuTitle: "배터리", subTitle: nil, rightImageView: "chevron.right")]
-        )
-    }
+    @IBOutlet weak var settingTableView: UITableView!
+    var settingModelManager = SettingModelManager()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,14 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingTableView.delegate = self
-        settingTableView.dataSource = self
-        settingTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
-        settingTableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "ProfileCell")
-        settingTableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
-        
+        setupDatas()
+        setupTableView()
         setNavi()
-        makeData()
     }
     
     func setNavi() {
@@ -47,6 +29,19 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(white: 245/255, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    func setupTableView() {
+        settingTableView.delegate = self
+        settingTableView.dataSource = self
+        settingTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
+        settingTableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "ProfileCell")
+        settingTableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
+    }
+    
+    func setupDatas() {
+        settingModelManager.makeData()
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -56,6 +51,7 @@ extension ViewController: UITableViewDelegate {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             let myidVC = MyIDViewController(nibName: "MyIDViewController", bundle: nil)
+            
             self.present(myidVC, animated: true, completion: nil)
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let generalVC = UIStoryboard(name: "GeneralViewController", bundle: nil).instantiateViewController(withIdentifier: "GeneralViewController") as! GeneralViewController
@@ -77,36 +73,33 @@ extension ViewController: UITableViewDataSource {
     // MARK: - Section
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return settingModel.count
+        return settingModelManager.recieveModelList().count
     }
     
     // MARK: - Row Cell
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingModel[section].count
+        return settingModelManager.recieveModelList()[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         if indexPath.row == 0 && indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
             
-            cell.topTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
-            cell.profileImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName)
-            cell.bottomDescription.text = settingModel[indexPath.section][indexPath.row].subTitle
+            cell.topTitle.text = settingModelManager.recieveModelList()[indexPath.section][indexPath.row].menuTitle
+            cell.profileImageView.image = UIImage(systemName: settingModelManager.recieveModelList()[indexPath.section][indexPath.row].leftImageName)
+            cell.bottomDescription.text = settingModelManager.recieveModelList()[indexPath.section][indexPath.row].subTitle
             
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         
-        cell.leftImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].leftImageName)
-        cell.middleTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
-        cell.rightImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].rightImageView ?? "")
+        cell.leftImageView.image = UIImage(systemName: settingModelManager.recieveModelList()[indexPath.section][indexPath.row].leftImageName)
+        cell.middleTitle.text = settingModelManager.recieveModelList()[indexPath.section][indexPath.row].menuTitle
+        cell.rightImageView.image = UIImage(systemName: settingModelManager.recieveModelList()[indexPath.section][indexPath.row].rightImageView ?? "")
         
         return cell
     }
-    
-    
 }
 

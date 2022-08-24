@@ -13,25 +13,19 @@ import UIKit
 class GeneralViewController: UIViewController {
 
     @IBOutlet weak var generalTableView: UITableView!
-    var generalModel = [[GeneralModel]]()
+    var generalModelManager = GeneralModelManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generalTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
+        setupTableView()
+        setupDatas()
         setNavi()
-        
+    }
+    
+    func setupTableView() {
+        generalTableView.backgroundColor = UIColor(white: 245/255, alpha: 1)
         generalTableView.dataSource = self
         generalTableView.delegate = self
-        generalModel.append([GeneralModel(leftTitle: "정보")])
-        
-        generalModel.append(
-            [GeneralModel(leftTitle: "날짜 및 시간"),
-             GeneralModel(leftTitle: "키보드"),
-             GeneralModel(leftTitle: "서체"),
-             GeneralModel(leftTitle: "언어 및 지역"),
-             GeneralModel(leftTitle: "사전")]
-        )
-        generalModel.append([GeneralModel(leftTitle: "재설정")])
     }
     
     func setNavi() {
@@ -39,6 +33,9 @@ class GeneralViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
+    func setupDatas() {
+        generalModelManager.makeData()
+    }
 }
 
 extension GeneralViewController: UITableViewDataSource {
@@ -46,22 +43,29 @@ extension GeneralViewController: UITableViewDataSource {
     // MARK: - Section
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return generalModel.count
+        return generalModelManager.recieveModelList().count
     }
     
     // MARK: - Row Cell
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return generalModel[section].count
+        return generalModelManager.recieveModelList()[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralCell", for: indexPath) as! GeneralCell
-        cell.leftLabel.text = generalModel[indexPath.section][indexPath.row].leftTitle
+        cell.leftLabel.text = generalModelManager.recieveModelList()[indexPath.section][indexPath.row].leftTitle
         return cell
     }
 }
 
 extension GeneralViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController(title: "준비중입니다.", message: nil, preferredStyle: .alert)
+        let okay = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okay)
+        present(alert, animated: true)
+        
+    }
 }
