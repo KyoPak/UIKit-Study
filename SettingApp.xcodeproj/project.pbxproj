@@ -12,6 +12,8 @@
 		3C57CBBB28B503C900216E4C /* GeneralViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C57CBBA28B503C900216E4C /* GeneralViewController.storyboard */; };
 		3C8C988A28B50D3600D44DE5 /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C988928B50D3600D44DE5 /* GeneralCell.swift */; };
 		3C8C988C28B50F2100D44DE5 /* GeneralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C988B28B50F2100D44DE5 /* GeneralModel.swift */; };
+		3C8C988F28B5C41A00D44DE5 /* MyIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C988D28B5C41A00D44DE5 /* MyIDViewController.swift */; };
+		3C8C989028B5C41A00D44DE5 /* MyIDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8C988E28B5C41A00D44DE5 /* MyIDViewController.xib */; };
 		3C8E6D9F28B2576F0020CDA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6D9E28B2576F0020CDA5 /* AppDelegate.swift */; };
 		3C8E6DA128B2576F0020CDA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DA028B2576F0020CDA5 /* SceneDelegate.swift */; };
 		3C8E6DA328B2576F0020CDA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E6DA228B2576F0020CDA5 /* ViewController.swift */; };
@@ -50,6 +52,8 @@
 		3C57CBBA28B503C900216E4C /* GeneralViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralViewController.storyboard; sourceTree = "<group>"; };
 		3C8C988928B50D3600D44DE5 /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
 		3C8C988B28B50F2100D44DE5 /* GeneralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModel.swift; sourceTree = "<group>"; };
+		3C8C988D28B5C41A00D44DE5 /* MyIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIDViewController.swift; sourceTree = "<group>"; };
+		3C8C988E28B5C41A00D44DE5 /* MyIDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIDViewController.xib; sourceTree = "<group>"; };
 		3C8E6D9B28B2576F0020CDA5 /* SettingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8E6D9E28B2576F0020CDA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C8E6DA028B2576F0020CDA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				3C8E6DCE28B278430020CDA5 /* ProfileCell.swift */,
 				3C8E6DD228B283D80020CDA5 /* MenuCell.swift */,
 				3C8C988B28B50F2100D44DE5 /* GeneralModel.swift */,
+				3C8C988D28B5C41A00D44DE5 /* MyIDViewController.swift */,
+				3C8C988E28B5C41A00D44DE5 /* MyIDViewController.xib */,
 				3C8E6DD328B283D80020CDA5 /* MenuCell.xib */,
 				3C8E6DCF28B278430020CDA5 /* ProfileCell.xib */,
 			);
@@ -262,6 +268,7 @@
 				3C8E6DAB28B257730020CDA5 /* LaunchScreen.storyboard in Resources */,
 				3C8E6DD128B278430020CDA5 /* ProfileCell.xib in Resources */,
 				3C8E6DD528B283D80020CDA5 /* MenuCell.xib in Resources */,
+				3C8C989028B5C41A00D44DE5 /* MyIDViewController.xib in Resources */,
 				3C8E6DA828B257730020CDA5 /* Assets.xcassets in Resources */,
 				3C8E6DA628B2576F0020CDA5 /* Main.storyboard in Resources */,
 			);
@@ -295,6 +302,7 @@
 				3C8E6DD428B283D80020CDA5 /* MenuCell.swift in Sources */,
 				3C47C50028B3353F00D07FA4 /* SettingModel.swift in Sources */,
 				3C8E6DD028B278430020CDA5 /* ProfileCell.swift in Sources */,
+				3C8C988F28B5C41A00D44DE5 /* MyIDViewController.swift in Sources */,
 				3C8E6D9F28B2576F0020CDA5 /* AppDelegate.swift in Sources */,
 				3C8E6DA128B2576F0020CDA5 /* SceneDelegate.swift in Sources */,
 			);

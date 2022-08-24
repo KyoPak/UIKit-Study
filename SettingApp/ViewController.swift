@@ -50,8 +50,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let myidVC = MyIDViewController(nibName: "MyIDViewController", bundle: nil)
+            self.present(myidVC, animated: true, completion: nil)
+        } else if indexPath.section == 1 && indexPath.row == 0 {
             let generalVC = UIStoryboard(name: "GeneralViewController", bundle: nil).instantiateViewController(withIdentifier: "GeneralViewController") as! GeneralViewController
             
             self.navigationController?.pushViewController(generalVC, animated: true)
@@ -67,12 +73,17 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingModel[section].count
-    }
-    
+
+    // MARK: - Section
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return settingModel.count
+    }
+    
+    // MARK: - Row Cell
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingModel[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

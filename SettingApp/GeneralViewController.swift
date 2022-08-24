@@ -41,13 +41,18 @@ class GeneralViewController: UIViewController {
     
 }
 
-extension GeneralViewController:UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return generalModel[section].count
-    }
+extension GeneralViewController: UITableViewDataSource {
+    
+    // MARK: - Section
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return generalModel.count
+    }
+    
+    // MARK: - Row Cell
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return generalModel[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +62,6 @@ extension GeneralViewController:UITableViewDataSource {
     }
 }
 
-extension GeneralViewController:UITableViewDelegate {
+extension GeneralViewController: UITableViewDelegate {
     
 }

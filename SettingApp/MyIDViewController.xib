@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyIDViewController" customModule="SettingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="ENk-pp-hBV" id="alg-pK-zgv"/>
+                <outlet property="emailTextField" destination="P7f-H9-4Ml" id="ZAh-r3-reA"/>
+                <outlet property="nextButton" destination="4VQ-K2-iQ2" id="F6t-OE-EBe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VQ-K2-iQ2">
+                    <rect key="frame" x="316" y="64" width="54" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="gsd-h3-vmU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENk-pp-hBV">
+                    <rect key="frame" x="20" y="64" width="68.666666666666671" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="ry0-Fi-h4z"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGc-Ev-Jib">
+                    <rect key="frame" x="129.33333333333331" y="124" width="131.33333333333331" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign with your Apple ID to use iCloud and other Apple services." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWf-jf-bjd">
+                    <rect key="frame" x="20" y="187" width="350" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-H9-4Ml">
+                    <rect key="frame" x="94.666666666666657" y="280" width="275.33333333333337" height="18.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-Dp-ai7">
+                    <rect key="frame" x="0.0" y="308.66666666666669" width="390" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="hLY-UA-ubD"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8X-xT-knO">
+                    <rect key="frame" x="20" y="279.33333333333331" width="64.666666666666671" height="20.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-h8-dKQ">
+                    <rect key="frame" x="0.0" y="269" width="390" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="WWP-lu-OIm"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl4-65-HUx">
+                    <rect key="frame" x="70.000000000000014" y="339.66666666666669" width="250.33333333333337" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Don't have an Apple ID or forgot it?"/>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="n53-1c-AJQ">
+                    <rect key="frame" x="30" y="410.66666666666669" width="330" height="60"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-PI-9xX">
+                            <rect key="frame" x="0.0" y="1.3333333333333321" width="62" height="56.333333333333343"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Fv-fM-oe2">
+                            <rect key="frame" x="67" y="1.6666666666666643" width="62" height="57"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7nC-AS-erR">
+                            <rect key="frame" x="134" y="1.6666666666666643" width="62" height="57"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ioN-hK-Wec">
+                            <rect key="frame" x="201" y="1" width="62" height="58.666666666666671"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-KR-nBX">
+                            <rect key="frame" x="268" y="0.6666666666666643" width="62" height="59"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7nC-AS-erR" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="top" id="6F4-JT-zOI"/>
+                        <constraint firstAttribute="height" constant="60" id="7bv-Ng-XfV"/>
+                        <constraint firstAttribute="bottom" secondItem="s8n-PI-9xX" secondAttribute="bottom" id="FiE-Ic-S8w"/>
+                        <constraint firstItem="ioN-hK-Wec" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="top" id="Tjs-xh-5lP"/>
+                        <constraint firstAttribute="bottom" secondItem="1Mg-KR-nBX" secondAttribute="bottom" id="VK1-1b-Cae"/>
+                        <constraint firstItem="s8n-PI-9xX" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="top" id="Yuj-1e-4A4"/>
+                        <constraint firstAttribute="bottom" secondItem="8Fv-fM-oe2" secondAttribute="bottom" id="Z1K-pA-fW7"/>
+                        <constraint firstAttribute="bottom" secondItem="7nC-AS-erR" secondAttribute="bottom" id="ZH3-i1-O91"/>
+                        <constraint firstItem="1Mg-KR-nBX" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="top" id="Zt7-Sb-rnn"/>
+                        <constraint firstItem="8Fv-fM-oe2" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="top" id="iqq-NM-oPn"/>
+                        <constraint firstAttribute="bottom" secondItem="ioN-hK-Wec" secondAttribute="bottom" id="rle-gm-yd4"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Apple ID is the account you use to access all Apple services." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5c-KK-Hbs">
+                    <rect key="frame" x="20" y="520.66666666666663" width="350" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-ic-BzY">
+                    <rect key="frame" x="180" y="578.66666666666663" width="30" height="26.666666666666686"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="dT1-sh-mmc"/>
+                        <constraint firstAttribute="height" constant="30" id="fyx-MN-enF"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="n53-1c-AJQ" firstAttribute="top" secondItem="Fl4-65-HUx" secondAttribute="bottom" constant="40" id="60u-mL-7MT"/>
+                <constraint firstItem="P7f-H9-4Ml" firstAttribute="top" secondItem="IWf-jf-bjd" secondAttribute="bottom" constant="50" id="A4F-1w-hqT"/>
+                <constraint firstAttribute="trailing" secondItem="DVy-h8-dKQ" secondAttribute="trailing" id="G7W-Km-Bij"/>
+                <constraint firstItem="o5c-KK-Hbs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GsZ-8K-sxM"/>
+                <constraint firstItem="IWf-jf-bjd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="IcY-Z8-NWb"/>
+                <constraint firstItem="o5c-KK-Hbs" firstAttribute="top" secondItem="n53-1c-AJQ" secondAttribute="bottom" constant="50" id="Irf-vC-EFF"/>
+                <constraint firstAttribute="trailing" secondItem="o5c-KK-Hbs" secondAttribute="trailing" constant="20" id="IxZ-JU-moG"/>
+                <constraint firstItem="Oin-Dp-ai7" firstAttribute="top" secondItem="P7f-H9-4Ml" secondAttribute="bottom" constant="10" id="LZ8-MB-Myw"/>
+                <constraint firstItem="Fl4-65-HUx" firstAttribute="top" secondItem="Oin-Dp-ai7" secondAttribute="bottom" constant="30" id="OsJ-5i-GRY"/>
+                <constraint firstItem="Oin-Dp-ai7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SVH-Pg-olH"/>
+                <constraint firstItem="P7f-H9-4Ml" firstAttribute="leading" secondItem="P8X-xT-knO" secondAttribute="trailing" constant="10" id="SsC-GM-sOA"/>
+                <constraint firstItem="P8X-xT-knO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Wgc-A8-rrt"/>
+                <constraint firstItem="IWf-jf-bjd" firstAttribute="top" secondItem="fGc-Ev-Jib" secondAttribute="bottom" constant="20" id="Zno-f9-aZk"/>
+                <constraint firstItem="Fl4-65-HUx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bUu-HL-pOf"/>
+                <constraint firstItem="ENk-pp-hBV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="crG-mW-n0l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4VQ-K2-iQ2" secondAttribute="trailing" constant="20" id="f01-L4-Cdy"/>
+                <constraint firstItem="4VQ-K2-iQ2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="f2Y-Bi-CDr"/>
+                <constraint firstItem="fGc-Ev-Jib" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="h7A-uu-TuA"/>
+                <constraint firstAttribute="trailing" secondItem="Oin-Dp-ai7" secondAttribute="trailing" id="hye-TZ-CAq"/>
+                <constraint firstItem="7UD-ic-BzY" firstAttribute="top" secondItem="o5c-KK-Hbs" secondAttribute="bottom" constant="20" id="iiW-tv-if0"/>
+                <constraint firstItem="7UD-ic-BzY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jF1-J6-mxp"/>
+                <constraint firstItem="fGc-Ev-Jib" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kR3-xr-cgA"/>
+                <constraint firstAttribute="trailing" secondItem="IWf-jf-bjd" secondAttribute="trailing" constant="20" id="n2k-is-sX0"/>
+                <constraint firstItem="P7f-H9-4Ml" firstAttribute="centerY" secondItem="P8X-xT-knO" secondAttribute="centerY" id="nyK-xE-Mza"/>
+                <constraint firstItem="DVy-h8-dKQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oGl-yz-P81"/>
+                <constraint firstItem="P7f-H9-4Ml" firstAttribute="top" secondItem="DVy-h8-dKQ" secondAttribute="bottom" constant="10" id="q34-uH-3hk"/>
+                <constraint firstItem="o5c-KK-Hbs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="raH-Cz-Wbl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n53-1c-AJQ" secondAttribute="trailing" constant="30" id="sYT-qb-cHY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P7f-H9-4Ml" secondAttribute="trailing" constant="20" id="uIU-PL-4ds"/>
+                <constraint firstItem="n53-1c-AJQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="v0Q-RB-w9N"/>
+                <constraint firstItem="ENk-pp-hBV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="yvB-kC-av7"/>
+                <constraint firstItem="n53-1c-AJQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zEX-sc-gbN"/>
+            </constraints>
+            <point key="canvasLocation" x="138.46153846153845" y="127.96208530805687"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
+        <image name="icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="music.note" catalog="system" width="97" height="128"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
